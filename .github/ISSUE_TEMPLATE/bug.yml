@@ -1,0 +1,17 @@
+name: Something isn't working
+description: Tell us what happened, and we'll fix it.
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Diagnostics
+      description: Brim → Settings → About → Copy Diagnostics, then paste here. It has no song titles or names.
+  - type: input
+    attributes:
+      label: Your Mac and macOS version
+      placeholder: MacBook Air M2, macOS 26.1

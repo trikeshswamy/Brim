@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Lets Brim send Apple Events (AppleScript) to Spotify and Music for shuffle and repeat.
+	     Required with the hardened runtime; macOS still asks you once per app (Automation). -->
+	<key>com.apple.security.automation.apple-events</key>
+	<true/>
+	<!-- Lets Brim read your calendar for the next event (P-4, F8). Without it the hardened runtime
+	     refuses Calendar access silently, with no prompt (found 2026-09-30); macOS still asks you once. -->
+	<key>com.apple.security.personal-information.calendars</key>
+	<true/>
+	<!-- Lets Brim load its own frameworks (Sparkle, MediaRemoteAdapter) when signed with its self-signed
+	     "Brim Open Source" certificate (found 2026-11-17, live update test): the hardened runtime only loads
+	     frameworks from the same Apple team, and a self-signed certificate has no team, so the release build
+	     stopped at launch ("Library not loaded: Sparkle"). Debug builds didn't show it (they're Apple-team signed).
+	     Remove once Brim is signed with a Developer ID. -->
+	<key>com.apple.security.cs.disable-library-validation</key>
+	<true/>
+</dict>
+</plist>

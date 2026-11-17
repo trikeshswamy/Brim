@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Local build output and logs
+/build/
+*.log
+
+# Local-only developer notes (build, architecture, layout, documents)
+DEVELOPER.md
+
+# Never commit secrets or local tool settings (audit 2026-10-29: none ever were)
+.env
+.env.*
+*.p12
+*.pem
+*.cer
+*.key
+*.mobileprovision
+.codex/
+.vercel
